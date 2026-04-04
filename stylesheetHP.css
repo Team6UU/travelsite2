@@ -1,0 +1,200 @@
+:root {
+    --primary-blue: #007BFF; /* Bright Blue */
+    --accent-gold:  #FFD700; /* Luxury Gold */
+    --accent-green: #28A745; /* Success/Action Green */
+    --pure-white:   #FFFFFF;
+    --text-dark:    #333333;
+}
+
+
+
+.hero-section {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+    text-align: center;
+    min-height: 55vh;         /* Takes up 55% of the screen height */
+    padding: 20px;
+    
+    /* Instead of a solid dark box, we use a subtle gradient over the whole top area 
+       so the white text is readable, but you can still see the palm trees! */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+
+.hero-button {
+    background-color: var(--primary-blue, #007BFF);
+    color: var(--pure-white, #ffffff);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* Gives it a modern pill shape */
+    transition: all 0.3s ease; /* Smooth animation setup */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    display: inline-block;
+}
+
+.hero-section h1 {
+    margin: 0; /* Removes default spacing so the box fits perfectly */
+    color: var(--pure-white);
+    text-shadow: none; /* Shadow isn't needed as much now */
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+body {
+    
+   #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;    /* Force width to 100% of the viewport */
+    height: 100vh;   /* Force height to 100% of the viewport */
+    object-fit: cover; /* This is the MAGIC line - it crops the video to fill the screen */
+    z-index: -1;     /* Keeps it behind everything */
+}
+    
+    body {
+   
+    /* Font: Aptos Black with fallbacks, size 14-16px */
+    font-family: 'Aptos Black', 'Aptos', Arial, sans-serif;
+    font-size: 16px; /* Base body size */
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Very light background for contrast */
+}
+        }
+
+       h1, h2, h3 {
+    font-family: 'Aptos Black', 'Aptos', Arial, sans-serif;
+    font-weight: 900;
+}
+
+        .promo-box {
+            margin: 40px auto;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8),;
+            font-weight: 900;
+            border: 1px solid #ddd; 
+            border-radius: 12px; 
+            padding: 20px; 
+            max-width: 500px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            line-height: 1.6;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%); /* Semi-transparent white */
+            backdrop-filter: blur(5px); /* Adds a nice blur effect to the background */
+            -webkit-backdrop-filter: blur(10px);
+        }
+body{ 
+    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar {
+    background-color: var(--primary-blue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid var(--accent-gold); /* A slice of gold on the nav! */
+}
+
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar a {
+    color: var(--pure-white);
+    font-size: 16px;
+    padding: 15px 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+
+.navbar a:hover {
+    background-color: var(--accent-green); /* Hover turns green */
+    color: var(--pure-white);
+}
+
+
+.main-container {
+    max-width: 900px;        /* Limits the width so text isn't too wide to read */
+    margin: 40px auto;       /* Centers the entire main block on the page */
+    background-color: rgba(255, 255, 255, 0.85); /* Makes the content area readable against the background */
+    padding: min(5em, 8%);           /* Space between the edge of the box and your text */
+    border-radius: 15px;     /* Smooth rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* Gives it depth */
+}
+
+/* This makes every section inside look consistent */
+.main-container section {
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Soft, subtle shadow */
+    border-bottom: none; /* Remove the old divider line */
+    transition: transform 0.3s ease; /* Setup for a hover animation */
+}
+
+/* Removes the divider from the very last section */
+.main-container section:hover {
+    transform: translateY(-5px); 
+}
+
+.main-container h2 {
+    color: var(--primary-blue);
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.footertype { 
+    background-color: var(--primary-blue);
+    color: var(--pure-white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 4px solid var(--accent-gold); /* A slice of gold at the bottom too! */
+}
+
+.icon-bar {
+    margin-top: 15px;
+    
+}
+
+/* mobile design */
+@media (max-width: 768px) {
+    .main-container {
+        margin: 20px 15px; /* Less margin on standard mobile screens */
+        padding: 25px;
+    }
+    
+    .navbar ul {
+        flex-direction: column; /* Stacks the menu items vertically on phones */
+    }
+    
+    .navbar a {
+        text-align: center;
+        width: 100%;
+        padding: 12px;
+    }
+
+    
+}

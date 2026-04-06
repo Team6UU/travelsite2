@@ -179,6 +179,70 @@ h1 {
     
 }
 
+.destinations-grid {
+    display: grid;
+    /* This line makes it perfectly responsive without media queries */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px; /* Space between cards */
+    margin-top: 30px;
+}
+
+.destination-card {
+    background-color: #f8f9fa; /* Very light grey */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the image doesn't break out of the rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-img {
+    width: 100%;       /* Forces the image to snap to the width of the card */
+    height: 200px;     /* Gives every single image the exact same height */
+    object-fit: cover; /* Crops the image without squishing it */
+    object-position: center;
+    border-bottom: 3px solid var(--accent-gold); /* Adds a luxury gold line below the picture */
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.destination-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.destination-info h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: none; /* overrides the main h2/h3 underline if you had one */
+}
+
+.destination-info p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+    background-color: var(--accent-green);
+    color: white;
+}
+
 /* mobile design */
 @media (max-width: 768px) {
     .main-container {

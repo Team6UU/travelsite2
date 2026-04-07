@@ -309,3 +309,96 @@ h1 {
     border-color: var(--primary-blue);
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
+
+/* Active nav link highlight */
+.navbar a.active {
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+}
+
+/* Form validation styles */
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.input-error {
+    border-color: red !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3) !important;
+}
+
+.success-message {
+    background-color: var(--accent-green);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+}
+
+.success-message p {
+    font-weight: normal;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+/* Modal styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-box h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    border-bottom: 3px solid var(--accent-gold);
+    padding-bottom: 10px;
+}
+
+.modal-box p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.modal-close {
+    background-color: #ccc;
+    color: var(--text-dark);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.modal-close:hover {
+    background-color: #aaa;
+}

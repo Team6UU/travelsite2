@@ -136,13 +136,15 @@ h1 {
     border-bottom: 4px solid var(--accent-gold);
 }
  
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+nav.navbar ul {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
+
  
 .navbar a {
     color: var(--pure-white);
@@ -402,7 +404,128 @@ h1 {
 .modal-close:hover {
     background-color: #aaa;
 }
+
+
+/* ---FAQ Page Styles--- */
+.main-faq{  
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: min(5em, 8%); 
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.main-faq section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.main-faq h2 {
+    color: var(--primary-blue);
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.faq-btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+.faq-btn:hover {
+    background-color: var(--accent-green);
+    color: #FFFFFF;
+}
+
+/* --- TRANSFERS PAGE STYLES --- */
  
+.main-transfers {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: min(5em, 8%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.main-transfers section {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.main-transfers h2 {
+    color: var(--primary-blue);
+    border-bottom: 3px solid var(--accent-gold);
+}
+
+.main-transfers p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.main-transfers .transfer-btn {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: #FFFFFF;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+/* ---- CAROUSEL ---- */
+.carousel {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.carousel-card {
+    background: linear-gradient(to bottom, var(--primary-blue), #0056b3);
+    color: var(--pure-white);
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 12px;
+    min-height: 250px;
+}
+
+.carousel-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--accent-gold);
+}
+
+.carousel-card p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--pure-white);
+}
+
+.carousel-indicators button {
+    background-color: var(--accent-gold) !important;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {
     .main-container {
@@ -419,4 +542,20 @@ h1 {
         width: 100%;
         padding: 12px;
     }
+}
+
+
+
+/* ---- SOCIAL MEDIA ICONS ---- */
+.icon-bar a {
+    color: var(--pure-white);
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.icon-bar a:hover {
+    color: var(--accent-gold);
+    transform: translateY(-3px);
 }

@@ -10,19 +10,32 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
         }
     });    
     
+    /*Additional Navigation Buttons */
+    $('.contact').on('click', function(){
+    window.location.href = "contactus.html";
+    });
 
-
+    $('.faq').on('click', function(){
+    window.location.href = "faq.html";
+    });
     
-
-
+    
     if (window.location.href.indexOf('contactus.html') !== -1) {
         $('.navbar a[href="contactus.html"]').addClass('active');
       }
 
     if (window.location.href.indexOf('travelsite.html') !== -1) {
         $('.navbar a[href="travelsite.html"]').addClass('active');
-        }  
+        }
+    
+    if (window.location.href.indexOf("faq.html") !== -1) {
+        $('.navbar a[href="faq.html"]').addClass('active'); //added functionality to the FAQ button on the nav bar
+    }        
         
+    if (window.location.href.indexOf("transfers.html") !== -1) {
+        $('.navbar a[href="transfers.html"]').addClass('active'); //added functionality to the Transfers button on the nav bar
+    }        
+
     $('#contact-form').on('submit', function(event) {
         event.preventDefault();
         var isValid = true;
@@ -34,21 +47,21 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
        var name = $('#name').val().trim();
          if (name === '') {
             $('#name').addClass('error');
-            $('#name').after('<p class="errormessage">Name is required.</p>');
+            $('#name').after('<p class="errormessage" role="alert">Name is required.</p>');
             isValid = false;
         }
 
         var email = $('#email').val().trim();
         if (email === '') {
             $('#email').addClass('error');
-            $('#email').after('<p class="errormessage">Email is required.</p>');
+            $('#email').after('<p class="errormessage" role="alert">Email is required.</p>');
             isValid = false;
         }
 
         var message = $('#message').val().trim();
         if (message === '') {
             $('#message').addClass('error');
-            $('#message').after('<p class="errormessage">Message is required.</p>');
+            $('#message').after('<p class="errormessage" role="alert">Message is required.</p>');
             isValid = false;
         }
 
@@ -61,25 +74,23 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
 
     });
 
-     // --- BOOK NOW MODAL ---
-    $('.book-now').on('click', function() {
-        var destination = $(this).data('destination');
-        $('#modal-destination').text('Interested in ' + destination + '?');
-        $('#modal-overlay').css('display', 'flex');
-    });
-
-    // Close modal when close button is clicked
-    $('#modal-close').on('click', function() {
-        $('#modal-overlay').hide();
-    });
-
-    // Close modal when clicking outside the box
-    $('#modal-overlay').on('click', function(e) {
-        if ($(e.target).is('#modal-overlay')) {
-            $('#modal-overlay').hide();
+ $('.book-now').on('click', function() {
+    var destination = $(this).data('destination');
+    Swal.fire({
+        title: 'Interested in ' + destination + '?',
+        text: 'Fill out our contact form and we will get back to you within 24 hours!',
+        icon: 'info',
+        confirmButtonText: 'Contact Us',
+        confirmButtonColor: '#007BFF'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = 'contactus.html';
         }
-    });
-});
+     });
+ 
+     });
+ });
+
 /* Navbar active link highlighting on scroll */
 
     $(window).on('scroll', function () {

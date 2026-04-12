@@ -1,5 +1,5 @@
 :root {
-    --primary-blue: #007BFF;
+    --primary-blue: #0056b3;
     --accent-gold:  #FFD700;
     --accent-green: #28A745;
     --pure-white:   #FFFFFF;
@@ -27,11 +27,12 @@ h1.page-title {
     position: absolute;
     top: -100px;
     left: 0;
-    background-color: var(--primary-blue);
-    color: var(--pure-white);
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
     padding: 10px 20px;
     transition: top 0.3s ease;
     z-index: 9999;
+    font-weight: bold;
 }
  
 #skip-link:focus {
@@ -135,35 +136,32 @@ h1 {
     z-index: 100;
     border-bottom: 4px solid var(--accent-gold);
 }
- 
-nav.navbar ul {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
 
- 
-.navbar a {
-    color: var(--pure-white);
+.navbar .nav-link {
+    color: var(--pure-white) !important;
     font-size: 16px;
     padding: 15px 25px;
-    text-decoration: none;
     transition: background-color 0.3s;
-    display: block;
 }
- 
-.navbar a:hover {
-    background-color: var(--accent-green);
-    color: var(--pure-white);
+
+.navbar .nav-link:hover {
+    background-color: var(--accent-green) !important;
+    color: var(--pure-white) !important;
 }
- 
-.navbar a.active {
-    background-color: var(--accent-gold);
-    color: var(--text-dark);
+
+.navbar .nav-link.active {
+    background-color: var(--accent-gold) !important;
+    color: var(--text-dark) !important;
 }
+
+.navbar-toggler{
+    border-color: var(--pure-white) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
  
 /* ---- MAIN CONTAINER ---- */
 .main-container {
@@ -520,7 +518,7 @@ nav.navbar ul {
 
 .carousel-img {
     width: 100%;
-    height: 300px;
+    height: 375px;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -533,15 +531,7 @@ nav.navbar ul {
         padding: 25px;
     }
  
-    .navbar ul {
-        flex-direction: column;
-    }
- 
-    .navbar a {
-        text-align: center;
-        width: 100%;
-        padding: 12px;
-    }
+    
 }
 
 
@@ -558,4 +548,14 @@ nav.navbar ul {
 .icon-bar a:hover {
     color: var(--accent-gold);
     transform: translateY(-3px);
+}
+
+/* focus styles for accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--accent-gold) !important;
+    outline-offset: 2px !important;    
 }

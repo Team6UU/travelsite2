@@ -29,11 +29,11 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
         }
     
     if (window.location.href.indexOf("faq.html") !== -1) {
-        $('.navbar a[href="faq.html"]').addClass('active'); //added functionality to the FAQ button on the nav bar
+        $('.navbar .navlink[href="faq.html"]').addClass('active'); //added functionality to the FAQ button on the nav bar
     }        
         
     if (window.location.href.indexOf("transfers.html") !== -1) {
-        $('.navbar a[href="transfers.html"]').addClass('active'); //added functionality to the Transfers button on the nav bar
+        $('.navbar .navlink[href="transfers.html"]').addClass('active'); //added functionality to the Transfers button on the nav bar
     }        
 
     $('#contact-form').on('submit', function(event) {
@@ -99,8 +99,8 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
             var sectionTop = $(this).offset().top - 200;
             var sectionId = $(this).attr('id');
             if (scrollPosition >= sectionTop) {
-             $('.navbar a').removeClass('active');
-             $('.navbar a[href="#' + sectionId + '"]').addClass('active');
+             $('.navbar .navlink').removeClass('active');
+             $('.navbar .navlink[href="#' + sectionId + '"]').addClass('active');
         }
     });
 });

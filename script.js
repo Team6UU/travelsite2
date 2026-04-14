@@ -29,12 +29,16 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
         }
     
     if (window.location.href.indexOf("faq.html") !== -1) {
-        $('.navbar .navlink[href="faq.html"]').addClass('active'); //added functionality to the FAQ button on the nav bar
+        $('.navbar .nav-link[href="faq.html"]').addClass('active'); //added functionality to the FAQ button on the nav bar
     }        
         
-    if (window.location.href.indexOf("transfers.html") !== -1) {
-        $('.navbar .navlink[href="transfers.html"]').addClass('active'); //added functionality to the Transfers button on the nav bar
-    }        
+    if (window.location.href.indexOf("Transfers.html") !== -1) {
+        $('.navbar .nav-link[href="Transfers.html"]').addClass('active'); //added functionality to the Transfers button on the nav bar
+    } 
+    
+    if (window.location.href.indexOf("about.html") !== -1) {
+        $('.navbar .nav-link[href="about.html"]').addClass('active');
+    }
 
     $('#contact-form').on('submit', function(event) {
         event.preventDefault();
@@ -47,21 +51,21 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
        var name = $('#name').val().trim();
          if (name === '') {
             $('#name').addClass('error');
-            $('#name').after('<p class="errormessage" role="alert">Name is required.</p>');
+            $('#name').after('<p class="error-message" role="alert">Name is required.</p>');
             isValid = false;
         }
 
         var email = $('#email').val().trim();
         if (email === '') {
             $('#email').addClass('error');
-            $('#email').after('<p class="errormessage" role="alert">Email is required.</p>');
+            $('#email').after('<p class="error-message" role="alert">Email is required.</p>');
             isValid = false;
         }
 
         var message = $('#message').val().trim();
         if (message === '') {
             $('#message').addClass('error');
-            $('#message').after('<p class="errormessage" role="alert">Message is required.</p>');
+            $('#message').after('<p class="error-message" role="alert">Message is required.</p>');
             isValid = false;
         }
 
@@ -99,8 +103,8 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
             var sectionTop = $(this).offset().top - 200;
             var sectionId = $(this).attr('id');
             if (scrollPosition >= sectionTop) {
-             $('.navbar .navlink').removeClass('active');
-             $('.navbar .navlink[href="#' + sectionId + '"]').addClass('active');
+             $('.navbar .nav-link').removeClass('active');
+             $('.navbar .nav-link[href="#' + sectionId + '"]').addClass('active');
         }
     });
 });

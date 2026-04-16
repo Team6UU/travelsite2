@@ -28,6 +28,10 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
         $('.navbar a[href="travelsite.html"]').addClass('active');
         }
     
+    if (window.location.href.indexOf("destinations.html") !== -1) {
+        $('.navbar .nav-link[href="destinations.html"]').addClass('active'); //added functionality to the Destinations button on the nav bar
+    }
+    
     if (window.location.href.indexOf("faq.html") !== -1) {
         $('.navbar .nav-link[href="faq.html"]').addClass('active'); //added functionality to the FAQ button on the nav bar
     }        
@@ -111,3 +115,96 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
 
 
 
+// --- All slideshow images for all countries ---
+
+const slideshowImages = {
+  spain: [
+    "images/spain1.webp",
+    "images/spain2.webp",
+    "images/spain3.webp",
+    "images/spain4.webp"
+  ],
+  italy: [
+    "images/italy1.webp",
+    "images/italy2.webp",
+    "images/italy3.webp",
+    "images/italy4.webp"
+  ],
+  france: [
+    "images/france1.webp",
+    "images/france2.webp",
+    "images/france3.webp",
+    "images/france4.webp"
+  ],
+  germany: [
+    "images/germany1.jpg",
+    "images/germany2.webp",
+    "images/germany3.jpg",
+    "images/germany4.webp"
+  ],
+  portugal: [
+    "images/portugal1.webp",
+    "images/portugal2.webp",
+    "images/portugal3.webp",
+    "images/portugal4.webp"
+  ],
+  poland: [
+    "images/poland1.webp",
+    "images/poland2.webp",
+    "images/poland3.webp",
+    "images/poland4.webp"
+  ],
+  japan: [
+    "images/japan1.webp",
+    "images/japan2.webp",
+    "images/japan3.webp",
+    "images/japan4.webp"
+  ],
+  dubi: [
+    "images/dubi1.webp",
+    "images/dubi2.webp",
+    "images/dubi3.webp",
+    "images/dubi4.webp"
+  ],
+  greece: [
+    "images/greece1.webp",
+    "images/greece2.webp",
+    "images/greece3.webp",
+    "images/greece4.webp"
+  ],
+  switzerland: [
+    "images/switzerland1.webp",
+    "images/switzerland2.webp",
+    "images/switzerland3.webp",
+    "images/switzerland4.webp"
+  ]
+};
+
+
+// --- Reusable slideshow setup function ---
+
+function setupSlideshow(country) {
+  const images = slideshowImages[country];
+  let index = 0;
+
+  const imgElement = document.querySelector(`#${country} .slideshow img`);
+  const nextBtn = document.querySelector(`#${country} .slideshow .right`);
+  const prevBtn = document.querySelector(`#${country} .slideshow .left`);
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    imgElement.src = images[index];
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    imgElement.src = images[index];
+  });
+}
+
+
+// --- Activate slideshows for ALL countries automatically ---
+
+Object.keys(slideshowImages).forEach(country => {
+  setupSlideshow(country);
+});

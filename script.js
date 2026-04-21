@@ -82,6 +82,8 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
 
     });
 
+// --- Book Now button functionality with SweetAlert2
+
  $('.book-now').on('click', function() {
     var destination = $(this).data('destination');
     Swal.fire({
@@ -116,6 +118,7 @@ $(document).ready(function() {  /* Ensures the DOM is fully loaded before execut
 
 
 // --- All slideshow images for all countries ---
+
 
 const slideshowImages = {
   spain: [
@@ -181,7 +184,8 @@ const slideshowImages = {
 };
 
 
-// --- Reusable slideshow setup function ---
+// --- Reusable slideshow setup function uses modulo operator to loop back
+//  to first image when end is reached---
 
 function setupSlideshow(country) {
   const images = slideshowImages[country];

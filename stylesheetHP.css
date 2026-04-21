@@ -63,7 +63,8 @@ body {
 /* ---- HEADINGS ---- */
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Aptos Black', 'Aptos', Arial, sans-serif;
     font-weight: 900;
 }
@@ -417,18 +418,6 @@ h1 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.main-faq section {
-    background-color: white;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.main-faq h2 {
-    color: var(--primary-blue);
-    border-bottom: 3px solid var(--accent-gold);
-}
 
 .faq-btn {
     display: inline-block;
@@ -446,7 +435,42 @@ h1 {
     color: #FFFFFF;
 }
 
-/* ---- About us styles ---- */
+.accordion-button {
+    background-color: var(--primary-blue)!important;
+    color: var(--pure-white)!important;
+    font-weight: bold;
+    font-family: 'Aptos Black', 'Aptos', Arial, sans-serif;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--accent-gold) !important;
+    color: var(--text-dark) !important;
+    box-shadow: none !important;
+}
+
+.accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: invert(0);
+}
+
+.accordion-item {
+    border: 1px solid var(--accent-gold);
+    margin-bottom: 8px;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+.accordion-body {
+    background-color: white;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ---- ABOUT US STYLES ---- */
 
 .about-h2 {
     text-align: center;
